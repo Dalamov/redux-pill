@@ -8,6 +8,7 @@ class App extends Component {
       <div className="App">
         <p>hola</p>
         < Home/>
+        <button className="btn btn-secondary">press</button>
       </div>
     );
   }
