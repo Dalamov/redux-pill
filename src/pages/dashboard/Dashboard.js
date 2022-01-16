@@ -80,20 +80,6 @@ export default function Dashboard() {
                         <span class="check"></span>{" "}
                       </label>{" "}
                     </div>
-                    <div class="my-1">
-                      {" "}
-                      <label class="tick">
-                        Lodges <input type="checkbox" />{" "}
-                        <span class="check"></span>{" "}
-                      </label>{" "}
-                    </div>
-                    <div class="my-1">
-                      {" "}
-                      <label class="tick">
-                        Holiday Homes <input type="checkbox" />{" "}
-                        <span class="check"></span>{" "}
-                      </label>{" "}
-                    </div>
                   </div>
                 </div>
 
@@ -211,8 +197,6 @@ export default function Dashboard() {
                     </h5>
                     <p class="font-italic text-muted mb-0 small">
                       Eixample, Barcelona. <br/>
-                      AccessBeach. <br/>
-                      Nearby 2.5 km from beach Travel Sustainable. 
                       <hr/>
                       Property The elegant NH Collection Barcelona Gran Hotel
                       Calderón has an excellent location just off Passeig de

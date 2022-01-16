@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "NH Collection Barcelona Gran Hotel Calderon",
+      "price": 162,
+      "propertyType": "hotel",
+      "capacity": "4",
+      "location": "Eixample, Barcelona.",
+      "description": " Property The elegant NH Collection Barcelona Gran Hotel Calderón has an excellent location just off Passeig de Gràcia Boulevard in central Barcelona."
+    },
+
+    {
+      "id": 2,
+      "title": "Marriot",
+      "price": 156,
+      "propertyType": "",
+      "capacity": "",
+      "location": "",
+      "description": ""
+    }
+  ]
+}
