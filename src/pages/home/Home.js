@@ -1,33 +1,35 @@
 //home components imports
 import { useRef } from "react";
-import  updateSearch  from "../../redux/actions";
+import updateSearch from "../../redux/actions";
+import { connect } from "react-redux";
+import { useDispatch } from "react-redux"
 
-export default function Home() {
+const Home = ({searchMapped}) => {
+  const propiertyRef = useRef(null);
+  const dispatch = useDispatch();
+
   return (
-    <input className="m-3" type="text"  />
-  )
+    <>
+      <input className="m-3" type="text" ref={propiertyRef} />
+      <button
+        onClick={() => 
+          dispatch(updateSearch(propiertyRef.current.value))
+        }
+      >
+        Search
+      </button>
+      {searchMapped}
+    </>
+  );
+};
+
+const mapStateToProps = (state) =>{
+  return {
+    searchMapped: state.search
   }
+}
 
+const reduxHoc = connect(mapStateToProps)
 
+export default reduxHoc(Home);
 
-
-
-
-
-// const Home = ({ updateSearch }) => {
-//   const propiertyRef = useRef(null);
-
-//   <>
-//   <input className="m-3" type="text" ref={propiertyRef} />
-//   {/* <button
-//     onClick={() => {
-//       updateSearch(propiertyRef.current.value);
-//     }}
-//   >
-//     Search
-//   </button> */}
-
-//   </>
-// };
-
-// export default Home;

@@ -1,12 +1,19 @@
 // import {} from"./types";
-// import {} from "./state";
+  import initialState from "./state";
 
-const AppReducer = (state = null, action) => {
+const AppReducer = (state = initialState, action) => {
+  console.log("before switch")
   switch (action.type) {
-    case 'ACTION':
-      return state
+    case "UPDATE_SEARCH":
+      console.log("inside reducer" + action.payload)
+      return {
+        ...state,
+        search : action.payload
+      };
+
     default:
-      return state
+      return state;
   }
-}
+};
+
 export default AppReducer;
