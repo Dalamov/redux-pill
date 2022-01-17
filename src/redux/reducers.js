@@ -1,11 +1,10 @@
 // import {} from"./types";
 // import initialState from "./state";
 
-import { combineReducers } from 'redux';
-import SearchReducer from './search/reducer';
+import { combineReducers } from "redux";
+import SearchReducer from "./search/reducer";
 
-const reducers = combineReducers({
-  search : SearchReducer
+export default combineReducers({
+  SearchReducer
 });
-
-export default reducers;
+  
