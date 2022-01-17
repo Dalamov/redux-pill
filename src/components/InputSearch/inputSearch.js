@@ -1,30 +1,47 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useRef } from "react";
+import updateSearch from "../../redux/search/actions";
 
-import "./inputSearch.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import "./inputSearch.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function InputSearch(){
-
-    return(
-        <section className="search-sec">
-            <div className="container row">
-                <form action="#" method="post" novalidate="novalidate">
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="row justify-content-end">
-                            <div className="col-lg-3 col-md-3 col-sm-12 p-0">
-                                <input type="text" className="form-control search-slt" placeholder="Enter City"></input>
-                            </div>
-                            <div className="col-lg-3 col-md-3 col-sm-12 p-0">
-                                <button type="button" className="btn btn-danger wrn-btn"><FontAwesomeIcon icon="search"/></button>
-                            </div>
-                        </div>
-                    </div>
+function InputSearch() {
+  const propertyRef = useRef();
+  const dispatch = useDispatch();
+  return (
+    <section className="search-sec">
+      <div className="container row">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="row justify-content-end">
+              <div className="col-lg-3 col-md-3 col-sm-12 p-0">
+                <input
+                  className="m-3"
+                  placeholder="Enter City"
+                  className="form-control search-slt"
+                  type="text"
+                  ref={propertyRef}
+                />
                 </div>
-            </form>
+                  <div className="col-lg-3 col-md-3 col-sm-12 p-0">
+
+                <button
+                  className="btn btn-danger wrn-btn"
+                  onClick={() =>
+                    dispatch(updateSearch(propertyRef.current.value))
+                  }
+                >
+                  Search
+                </button>
+                  </div>
+              </div>
             </div>
-        </section>
-    )
+          </div>
+        </div>
+
+    </section>
+  );
 }
 
-export default InputSearch
+export default InputSearch;
