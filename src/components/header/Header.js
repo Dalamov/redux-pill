@@ -13,12 +13,10 @@ export default function Header(props) {
           <Navbar.Collapse id="main-navbar">
             <Nav className="d-flex gap-3 justify-content-between">
               <NavLink to="/home">Home</NavLink>
-
               <>
                 <NavLink to="/sign-in">Sign In</NavLink>
                 <NavLink to="/sign-up">Sign Up</NavLink>
               </>
-
             </Nav>
           </Navbar.Collapse>
         </Container>
