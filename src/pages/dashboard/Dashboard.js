@@ -62,7 +62,14 @@ export default function Dashboard() {
                     <div class="my-1">
                       {" "}
                       <label class="tick">
-                        Guest houses <input type="checkbox" />{" "}
+                        Houses <input type="checkbox" />{" "}
+                        <span class="check"></span>{" "}
+                      </label>{" "}
+                    </div>
+                    <div class="my-1">
+                      {" "}
+                      <label class="tick">
+                      on the outskirts of Barcelona <input type="checkbox" />{" "}
                         <span class="check"></span>{" "}
                       </label>{" "}
                     </div>
@@ -178,7 +185,6 @@ export default function Dashboard() {
                         <span class="check"></span>{" "}
                       </label>{" "}
                     </div>
-                    
                   </div>
                 </div>
               </div>
@@ -196,8 +202,8 @@ export default function Dashboard() {
                       NH Collection Barcelona Gran Hotel Calderon
                     </h5>
                     <p class="font-italic text-muted mb-0 small">
-                      Eixample, Barcelona. <br/>
-                      <hr/>
+                      Eixample, Barcelona. <br />
+                      <hr />
                       Property The elegant NH Collection Barcelona Gran Hotel
                       Calderón has an excellent location just off Passeig de
                       Gràcia Boulevard in central Barcelona.
@@ -239,10 +245,10 @@ export default function Dashboard() {
                       NH Collection Barcelona Gran Hotel Calderon
                     </h5>
                     <p class="font-italic text-muted mb-0 small">
-                      Eixample, Barcelona. <br/>
-                      AccessBeach. <br/>
-                      Nearby 2.5 km from beach Travel Sustainable. 
-                      <hr/>
+                      Eixample, Barcelona. <br />
+                      AccessBeach. <br />
+                      Nearby 2.5 km from beach Travel Sustainable.
+                      <hr />
                       Property The elegant NH Collection Barcelona Gran Hotel
                       Calderón has an excellent location just off Passeig de
                       Gràcia Boulevard in central Barcelona.

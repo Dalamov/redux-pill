@@ -1,0 +1,102 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "NH Collection Barcelona Gran Hotel Calderon",
+      "price": 162,
+      "propertyType": "hotel",
+      "maxCapacity": "",
+      "location": "Eixample, Barcelona.",
+      "description": " Property The elegant NH Collection Barcelona Gran Hotel Calderón has an excellent location just off Passeig de Gràcia Boulevard in central Barcelona.",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/330445543.jpg?k=9550684fae718c42bda728d891844d83fca209d8a02cb7a465b4019322af2070&o=&hp=1"
+    },
+
+    {
+      "id": 2,
+      "title": "Sensation Sagrada Familia",
+      "price": 123,
+      "propertyType": "hotel",
+      "maxCapacity": "",
+      "location": "Eixample, Barcelona",
+      "description": "Within a 2-minute walk of Gaudí’s Sagrada Família, these bright modern apartments feature a shared rooftop terrace and a small outdoor swimming pool with views of the city’s famous Basilica. ",
+      "image": "https://media-cdn.tripadvisor.com/media/photo-s/12/31/a1/10/terraza.jpg"
+    },
+
+    {
+      "id": 3,
+      "title": "Midtown Luxury Apartments by Sweet Inn",
+      "price": 289,
+      "propertyType": "apartment",
+      "maxCapacity": "",
+      "location": "Sarrià-St. Gervasi, Barcelona",
+      "description": "These bright and spacious Midtown Luxury Apartments by Sweet Inn are located in a renovated building, 6 minutes’ walk from Barcelona’s fashionable Passeig de Gracia Boulevard.  ",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/327944475.jpg?k=3e320affa2acb80527145ad11f51e9f25f28b8d6abfb032bdfa5e7bcee4bb8b9&o=&hp=1"
+    },
+
+    {
+      "id": 4,
+      "title": "Lugaris Beach",
+      "price": 105,
+      "propertyType": "apartment",
+      "maxCapacity": "",
+      "location": "Sant Martí, Barcelona",
+      "description": "Lugaris Beach is located less than 656 feet from Bogatell Beach in the quiet neighborhood of Poble Nou. ",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max500/103818342.jpg?k=b0029a8beeeee65fb672074ab1d7ab889a52ec1ce519ecd864e00e876a45490f&o=&hp=1"
+    },
+
+    {
+      "id": 5,
+      "title": "Masia Cal Lari",
+      "price": 230,
+      "propertyType": "house",
+      "maxCapacity": "",
+      "location": "on the outskirts of Barcelona",
+      "description": "Offering barbecue facilities and mountain view, Masia Cal Lari is located in Barcelona, 21 miles from Tibidabo and 22 miles from Camp Nou. ",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max500/304584754.jpg?k=7080d6f79085fd829154ec2736d9dd4db8bf55782ee6c7e3bc8059bc2f7a983d&o=&hp=1"
+    },
+
+    {
+      "id": 6,
+      "title": "Masía Can Tramontana",
+      "price": 188,
+      "propertyType": "house",
+      "maxCapacity": "",
+      "location": "on the outskirts of Barcelona",
+      "description": "Located in Tiana, 1.2 miles from Platja de les Moreres and 1.2 miles from Montgat Beach, Masía Can Tramontana provides accommodations with free WiFi, air conditioning and a garden. ",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max500/308371384.jpg?k=7fdf3cfd0c414b8f55481afa16dc341afdc0864a487b6f81b93707a312b83aa7&o=&hp=1"
+    },
+
+    {
+      "id": 7,
+      "title": "Nits de Bosc Opens in new window Nits de Bosc",
+      "price": 88,
+      "propertyType": "resort",
+      "maxCapacity": "",
+      "location": "on the outskirts of Barcelona",
+      "description": "Nits de Bosc has a restaurant, seasonal outdoor swimming pool, a bar and shared lounge in Vilassar de Dalt. The property features a garden, as well as a terrace. ",
+      "image":"https://nitsdebosc.com/wp-content/uploads/2021/04/NIT-DE-BOSC-7774-scaled.jpg"
+    },
+
+    {
+      "id": 8,
+      "title": "Villa Victoria Barcelona",
+      "price": 240,
+      "propertyType": "villa",
+      "maxCapacity": "",
+      "location": "Sants-Montjuïc, Barcelona",
+      "description": "Featuring a private outdoor pool, extensive gardens and a hot tub, Villa Victoria Barcelona is a 10-minute walk from Güell Park. ",
+      "image":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/145899330.jpg?k=8f174fae7a0b8b55590b78699fd9cc5869552ddd5ca16f0d66bedeec7a419e0e&o=&hp=1"
+    },
+
+    {
+      "id": 9,
+      "title": "Fridays Flats Casa Flor, Villa with Pool",
+      "price": 298,
+      "propertyType": "villa",
+      "maxCapacity": "",
+      "location": "Sant Martí, Barcelona",
+      "description": "Located in Barcelona in the Catalonia region, Fridays Flats Casa Flor, Villa with Pool has a balcony. ",
+      "image":"https://cf.bstatic.com/xdata/images/hotel/max1280x900/286388464.jpg?k=2cf8c6d08ea5812ff30308fa653defb0800a9a6345bbefc66e0789c38c22078d&o=&hp=1"
+    }
+  ]
+}

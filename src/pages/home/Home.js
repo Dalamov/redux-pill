@@ -1,6 +1,6 @@
 //home components imports
 import { useRef } from "react";
-import updateSearch from "../../redux/actions";
+import updateSearch from "../../redux/search/actions";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux"
 
