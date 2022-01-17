@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         < Home/>
+        <button className="btn btn-secondary">press</button>
       </div>
     );
   }
