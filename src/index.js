@@ -7,6 +7,8 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"></link>
 
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
 ReactDOM.render(
   <Router>
     <ReduxProvider store={store}>

@@ -1,0 +1,1 @@
+export { inputSearch } from "./inputSearch";

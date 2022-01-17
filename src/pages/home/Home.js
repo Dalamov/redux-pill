@@ -1,35 +1,28 @@
 //home components imports
-import { useRef } from "react";
-import updateSearch from "../../redux/search/actions";
 import { connect } from "react-redux";
-import { useDispatch } from "react-redux"
 
-const Home = ({searchMapped}) => {
-  const propertyRef = useRef();
-  const dispatch = useDispatch();
+import InputSearch from "../../components/InputSearch/inputSearch";
+import Carrousel from "../../components/Carrousel/carrousel";
+
+const Home = ({ searchMapped }) => {
 
   return (
     <>
-      <input className="m-3" type="text" ref={propertyRef} />
-      <button
-        onClick={() => 
-          dispatch(updateSearch(propertyRef.current.value))
-        }
-      >
-        Search
-      </button>
-      {searchMapped}
+      {/* {searchMapped} */}
+      <div>
+        <Carrousel />
+        <InputSearch />
+      </div>
     </>
   );
 };
 
-const mapStateToProps = (state) =>{
-  return {
-    searchMapped: state.search
-  }
-}
+// const mapStateToProps = (state) => {
+//   return {
+//     searchMapped: state.search,
+//   };
+// };
 
-const reduxHoc = connect(mapStateToProps)
+// const reduxHoc = connect(mapStateToProps);
 
-export default reduxHoc(Home);
-
+export default Home;
