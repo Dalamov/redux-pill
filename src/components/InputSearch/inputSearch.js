@@ -4,7 +4,6 @@ import { useRef } from "react";
 import updateSearch from "../../redux/search/actions";
 
 import "./inputSearch.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function InputSearch() {
   const propertyRef = useRef();
@@ -14,12 +13,11 @@ function InputSearch() {
       <div className="container row">
         <div className="row">
           <div className="col-lg-12">
-            <div className="row justify-content-end">
+            <div className="row justify-content-end align-items-center">
               <div className="col-lg-3 col-md-3 col-sm-12 p-0">
                 <input
-                  className="m-3"
+                  className="m-3 form-control search-slt"
                   placeholder="Enter City"
-                  className="form-control search-slt"
                   type="text"
                   ref={propertyRef}
                 />

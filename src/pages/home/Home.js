@@ -1,7 +1,4 @@
-//home components imports
-import { connect } from "react-redux";
-
-import InputSearch from "../../components/InputSearch/inputSearch";
+import InputSearch from "../../components/InputSearch/InputSearch";
 import Carrousel from "../../components/Carrousel/carrousel";
 
 const Home = ({ searchMapped }) => {
