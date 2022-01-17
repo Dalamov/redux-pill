@@ -5,15 +5,15 @@ import { connect } from "react-redux";
 import { useDispatch } from "react-redux"
 
 const Home = ({searchMapped}) => {
-  const propiertyRef = useRef(null);
+  const propertyRef = useRef();
   const dispatch = useDispatch();
 
   return (
     <>
-      <input className="m-3" type="text" ref={propiertyRef} />
+      <input className="m-3" type="text" ref={propertyRef} />
       <button
         onClick={() => 
-          dispatch(updateSearch(propiertyRef.current.value))
+          dispatch(updateSearch(propertyRef.current.value))
         }
       >
         Search

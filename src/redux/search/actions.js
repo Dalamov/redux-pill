@@ -1,9 +1,9 @@
 
-const updateSearch = (propierty) => {
+const updateSearch = (property) => {
 
   return {
     type: "UPDATE_SEARCH",
-    payload: propierty,
+    payload: property,
   }
 }
 
