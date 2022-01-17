@@ -3,8 +3,11 @@
 
 import { combineReducers } from "redux";
 import SearchReducer from "./search/reducer";
+import FilterReducer from "./filters/reducer";
+
 
 export default combineReducers({
-  SearchReducer
+  SearchReducer,
+  FilterReducer
 });
   

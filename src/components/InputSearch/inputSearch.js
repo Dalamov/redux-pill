@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useRef } from "react";
 import updateSearch from "../../redux/search/actions";
 
+
 import "./inputSearch.css";
 
 function InputSearch() {

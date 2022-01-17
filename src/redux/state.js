@@ -1,12 +1,11 @@
 const initialState = {
   search: "",
 
-  filters: {
-    typeOfPropierty: {
-      house: false,
-      apartment: false,
-    },
-  },
+
+    typeOfPropierty:[],
+    price: 0,
+    capacity: 0
+
 };
 
 export default initialState;
