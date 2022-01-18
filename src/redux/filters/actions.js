@@ -11,6 +11,6 @@ export const getPrice = (price) => ({
 });
 
 export const getCapacity = (capacity) => ({
-  type: "GET_TYPE",
+  type: "GET_CAPACITY",
   payload: capacity,
 });

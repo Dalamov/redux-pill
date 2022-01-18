@@ -4,23 +4,37 @@ import { getType, getPrice, getCapacity } from "../../redux/filters/actions";
 import { useDispatch } from "react-redux";
 import "./dashboard.css";
 
-const Properties= () => {
+const Properties= ( { FilterReducer } ) => {
   const dispatch = useDispatch();
 
   const handlePrice = (e) =>{
-    console.log(e.target.value)
-    let price = null
+    
+    let priceArray = FilterReducer.price
+
     if (e.target.checked) {
-      price = e.target.value
-      console.log("dentro del if, precio:" + price)
+      priceArray.push(e.target.value)
       
     } else {
-      price = ""
+      
+    }
+    dispatch(getPrice(priceArray))
+  }
+  
+  //if array.contains(e.target.dataset.id)
+
+  const handleCapacity = (e) =>{
+    console.log(e.target.value + JSON.stringify(FilterReducer) )
+    let capacity = null
+    if (e.target.checked) {
+      capacity = e.target.value
+      console.log("dentro del if, capacidad:" + capacity)
+      
+    } else {
+      capacity = ""
       }
 
-      dispatch(getPrice(price))
+      dispatch(getCapacity(capacity))
   }
-
   
 
   return (
@@ -160,6 +174,7 @@ const Properties= () => {
                           value="100"
                           onChange={(e) => handlePrice(e)}
                           type="checkbox"
+                          data-id="0"
                         />
                         <span className="check"></span>
                       </label>
@@ -171,6 +186,7 @@ const Properties= () => {
                           value="150"
                           onChange={(e) => handlePrice(e)}
                           type="checkbox"
+                          data-id="1"
                         />
                         <span className="check"></span>
                       </label>
@@ -180,9 +196,10 @@ const Properties= () => {
                       <label className="tick">
                         more than 150
                         <input
-                          value="150+"
+                          value="151"
                           onChange={(e) => handlePrice(e)}
                           type="checkbox"
+                          data-id="2"
                         />
                         <span className="check"></span>
                       </label>
@@ -201,11 +218,7 @@ const Properties= () => {
                         1{" "}
                         <input
                           value="1"
-                          onChange={(e) =>
-                            dispatch(
-                              getCapacity(e.target.attributes.value.value)
-                            )
-                          }
+                          onChange={(e) => handleCapacity(e)}
                           type="checkbox"
                         />{" "}
                         <span className="check" />
@@ -216,11 +229,7 @@ const Properties= () => {
                         2{" "}
                         <input
                           value="2"
-                          onChange={(e) =>
-                            dispatch(
-                              getCapacity(e.target.attributes.value.value)
-                            )
-                          }
+                          onChange={(e) => handleCapacity(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -231,11 +240,7 @@ const Properties= () => {
                         3{" "}
                         <input
                           value="3"
-                          onChange={(e) =>
-                            dispatch(
-                              getCapacity(e.target.attributes.value.value)
-                            )
-                          }
+                          onChange={(e) => handleCapacity(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -247,11 +252,7 @@ const Properties= () => {
                         4{" "}
                         <input
                           value="4"
-                          onChange={(e) =>
-                            dispatch(
-                              getCapacity(e.target.attributes.value.value)
-                            )
-                          }
+                          onChange={(e) => handleCapacity(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -262,11 +263,7 @@ const Properties= () => {
                         5{" "}
                         <input
                           value="5"
-                          onChange={(e) =>
-                            dispatch(
-                              getCapacity(e.target.attributes.value.value)
-                            )
-                          }
+                          onChange={(e) => handleCapacity(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -277,11 +274,7 @@ const Properties= () => {
                         6 - 10{" "}
                         <input
                           value="10"
-                          onChange={(e) =>
-                            dispatch(
-                              getCapacity(e.target.attributes.value.value)
-                            )
-                          }
+                          onChange={(e) => handleCapacity(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -348,13 +341,10 @@ const Properties= () => {
 };
 
 const mapStateToProps = (state) => {
-  return {
-    type: state.typeOfPropierty,
-  };
+
+  return { FilterReducer: state.FilterReducer}
 };
+export default connect(mapStateToProps)(Properties)
 
-const reduxHoc = connect(mapStateToProps);
 
-export default reduxHoc(Properties);
 
-// export default connect(mapStateToProps,{updatedType})(Dashboard);

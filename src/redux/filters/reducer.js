@@ -10,10 +10,9 @@ const FilterReducer = (state = initialState, action) => {
       };
 
     case "GET_PRICE":
-      console.log("inside filter reducer, " + action.payload);
       return {
         ...state,
-        price: action.payload
+        price: action.payload.sort(function(a, b){return a - b})
       };
 
     case "GET_CAPACITY":
