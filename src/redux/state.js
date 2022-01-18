@@ -3,8 +3,8 @@ const initialState = {
 
 
     typeOfPropierty:[],
-    price: 0,
-    capacity: 0
+    price: "",
+    capacity: ""
 
 };
 
