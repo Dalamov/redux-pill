@@ -7,14 +7,21 @@ import "./dashboard.css";
 const Properties= () => {
   const dispatch = useDispatch();
 
-  // const handleType = (e) => {
-  //   const selectedType= ""
-  //   if (e.target.checked) {
-  //       selectedType = e.target.attributes.value.value
-  //     }
-  //     return selectedType
-  //   // dispatch(getFilteredProperties(value));
-  // };
+  const handlePrice = (e) =>{
+    console.log(e.target.value)
+    let price = null
+    if (e.target.checked) {
+      price = e.target.value
+      console.log("dentro del if, precio:" + price)
+      
+    } else {
+      price = ""
+      }
+
+      dispatch(getPrice(price))
+  }
+
+  
 
   return (
     <div className="container my-sm-5 border p-0 bg-sec-light">
@@ -151,9 +158,7 @@ const Properties= () => {
                         50 - 100
                         <input
                           value="100"
-                          onChange={(e) =>
-                            dispatch(getPrice(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handlePrice(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -164,9 +169,7 @@ const Properties= () => {
                         100 - 150
                         <input
                           value="150"
-                          onChange={(e) =>
-                            dispatch(getPrice(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handlePrice(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -178,9 +181,7 @@ const Properties= () => {
                         more than 150
                         <input
                           value="150+"
-                          onChange={(e) =>
-                            dispatch(getPrice(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handlePrice(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>

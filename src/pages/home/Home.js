@@ -1,6 +1,6 @@
 
 import React from "react";
-import InputSearch from "../../components/InputSearch/InputSearch";
+import InputSearch from "../../components/InputSearch/inputSearch";
 import Carrousel from "../../components/Carrousel/carrousel";
 
 const Home = ({ searchMapped }) => {

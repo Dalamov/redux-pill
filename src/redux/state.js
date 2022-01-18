@@ -1,10 +1,8 @@
 const initialState = {
   search: "",
-
-
-    typeOfPropierty:[],
-    price: "",
-    capacity: ""
+  typeOfPropierty:[],
+  price: "",
+  capacity: ""
 
 };
 
