@@ -15,7 +15,10 @@ const Properties= ( { FilterReducer } ) => {
       priceArray.push(e.target.value)
       
     } else {
-      
+      const i = priceArray.indexOf(e.target.value);
+        if (i > -1) {
+          priceArray.splice(i, 1);
+        }
     }
     dispatch(getPrice(priceArray))
   }
