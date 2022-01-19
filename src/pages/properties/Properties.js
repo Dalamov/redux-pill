@@ -331,6 +331,7 @@ const Properties= ( { FilterReducer } ) => {
                   <img
                     src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/330445543.jpg?k=9550684fae718c42bda728d891844d83fca209d8a02cb7a465b4019322af2070&o=&hp=1"
                     width="320"
+                    alt="carrousel img"
                     className="ml-lg-5 order-1 order-lg-2 border m-2"
                   />
                 </div>
