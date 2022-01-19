@@ -1,12 +1,12 @@
-import initialState from "../state";
+import filterState from "./state";
 
-const FilterReducer = (state = initialState, action) => {
+const FilterReducer = (state = filterState, action) => {
   switch (action.type) {
     case "GET_TYPE":
       console.log("inside filter reducer, " + action.payload);
       return {
         ...state,
-        typeOfPropierty: action.payload
+        typeOfProperty: action.payload
       };
 
     case "GET_PRICE":

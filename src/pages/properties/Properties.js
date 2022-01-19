@@ -1,44 +1,60 @@
 import React from "react";
+import axios from "axios";
 import { connect } from "react-redux";
 import { getType, getPrice, getCapacity } from "../../redux/filters/actions";
 import { useDispatch } from "react-redux";
+import { getProperties } from "../../api/fetchProperties";
 import "./dashboard.css";
 
-const Properties= ( { FilterReducer } ) => {
+const Properties = ({ FilterReducer }) => {
   const dispatch = useDispatch();
 
-  const handlePrice = (e) =>{
-    
-    let priceArray = FilterReducer.price
+  const handlePrice = (e) => {
+    let priceArray = FilterReducer.price;
 
     if (e.target.checked) {
-      priceArray.push(e.target.value)
-      
+      priceArray.push(e.target.value);
     } else {
       const i = priceArray.indexOf(e.target.value);
-        if (i > -1) {
-          priceArray.splice(i, 1);
-        }
+      if (i > -1) {
+        priceArray.splice(i, 1);
+      }
     }
-    dispatch(getPrice(priceArray))
-  }
-  
+    dispatch(getPrice(priceArray));
+  };
+
+  const handleType = (e) => {
+    let typeArray = FilterReducer.typeOfProperty;
+
+    if (e.target.checked) {
+      typeArray.push(e.target.value);
+    } else {
+      const i = typeArray.indexOf(e.target.value);
+      if (i > -1) {
+        typeArray.splice(i, 1);
+      }
+    }
+    dispatch(getType(typeArray));
+  };
+
   //if array.contains(e.target.dataset.id)
 
-  const handleCapacity = (e) =>{
-    console.log(e.target.value + JSON.stringify(FilterReducer) )
-    let capacity = null
+  const handleCapacity = (e) => {
+    let capacityArray = FilterReducer.capacity;
     if (e.target.checked) {
-      capacity = e.target.value
-      console.log("dentro del if, capacidad:" + capacity)
-      
-    } else {
-      capacity = ""
+      capacityArray.push(e.target.value);
+    } 
+    // if (capacityArray.length >= 1) {
+    //   capacityArray = Math.max(...capacityArray);
+    // } 
+    else {
+      const i = capacityArray.indexOf(e.target.value);
+      if (i > -1) {
+        capacityArray.splice(i, 1);
       }
-
-      dispatch(getCapacity(capacity))
-  }
-  
+    }
+    dispatch(getCapacity(capacityArray));
+  };
 
   return (
     <div className="container my-sm-5 border p-0 bg-sec-light">
@@ -68,29 +84,19 @@ const Properties= ( { FilterReducer } ) => {
             >
               <div className="d-flex flex-row gap-4">
                 <div className="box border-bottom shadow-sm p-3 mb-5 bg-white rounded">
+                
                   <div className="box-label text-uppercase d-flex align-items-center border-bottom  d-flex">
                     Property type
-                    <button
-                      className="btn ms-auto"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#inner-box"
-                      aria-expanded="false"
-                      aria-controls="inner-box"
-                    >
-                      <span className="fas fa-plus"></span>
-                    </button>
+                    <span className="fas fa-plus"></span>
                   </div>
-
+                  
                   <div id="inner-box" className="text-secondary collapse show">
                     <div className="my-1">
                       <label className="tick">
                         Hotels
                         <input
                           value="Hotels"
-                          onChange={(e) =>
-                            dispatch(getType(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handleType(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -101,9 +107,7 @@ const Properties= ( { FilterReducer } ) => {
                         Apartments
                         <input
                           value="Apartments"
-                          onChange={(e) =>
-                            dispatch(getType(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handleType(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -114,9 +118,7 @@ const Properties= ( { FilterReducer } ) => {
                         Houses
                         <input
                           value="Houses"
-                          onChange={(e) =>
-                            dispatch(getType(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handleType(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -127,9 +129,7 @@ const Properties= ( { FilterReducer } ) => {
                         on the outskirts of Barcelona
                         <input
                           value="on the outskirts of Barcelona"
-                          onChange={(e) =>
-                            dispatch(getType(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handleType(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -140,9 +140,7 @@ const Properties= ( { FilterReducer } ) => {
                         Resorts
                         <input
                           value="Resorts"
-                          onChange={(e) =>
-                            dispatch(getType(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handleType(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -153,9 +151,7 @@ const Properties= ( { FilterReducer } ) => {
                         Villas
                         <input
                           value="Villas"
-                          onChange={(e) =>
-                            dispatch(getType(e.target.attributes.value.value))
-                          }
+                          onChange={(e) => handleType(e)}
                           type="checkbox"
                         />
                         <span className="check"></span>
@@ -345,10 +341,6 @@ const Properties= ( { FilterReducer } ) => {
 };
 
 const mapStateToProps = (state) => {
-
-  return { FilterReducer: state.FilterReducer}
+  return { FilterReducer: state.FilterReducer };
 };
-export default connect(mapStateToProps)(Properties)
-
-
-
+export default connect(mapStateToProps)(Properties);
