@@ -1,9 +1,9 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import { connect } from "react-redux";
 import { getType, getPrice, getCapacity } from "../../redux/filters/actions";
 import { useDispatch } from "react-redux";
-import { getProperties } from "../../api/fetchProperties";
+// import { getProperties } from "../../api/fetchProperties";
 import "./dashboard.css";
 
 const Properties = ({ FilterReducer }) => {
@@ -21,7 +21,7 @@ const Properties = ({ FilterReducer }) => {
       }
     }
     dispatch(getPrice(priceArray));
-  };
+  }
 
   const handleType = (e) => {
     let typeArray = FilterReducer.typeOfProperty;
@@ -35,18 +35,13 @@ const Properties = ({ FilterReducer }) => {
       }
     }
     dispatch(getType(typeArray));
-  };
-
-  //if array.contains(e.target.dataset.id)
+  }
 
   const handleCapacity = (e) => {
     let capacityArray = FilterReducer.capacity;
     if (e.target.checked) {
       capacityArray.push(e.target.value);
-    } 
-    // if (capacityArray.length >= 1) {
-    //   capacityArray = Math.max(...capacityArray);
-    // } 
+    }
     else {
       const i = capacityArray.indexOf(e.target.value);
       if (i > -1) {
@@ -54,7 +49,7 @@ const Properties = ({ FilterReducer }) => {
       }
     }
     dispatch(getCapacity(capacityArray));
-  };
+  }
 
   return (
     <div className="container my-sm-5 border p-0 bg-sec-light">
