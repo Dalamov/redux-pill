@@ -6,7 +6,7 @@ import updateSearch from "../../redux/search/actions";
 
 import "./inputSearch.css";
 
-function InputSearch({ SearchReducer }) {
+const InputSearch = ({ SearchReducer }) => {
   
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ function InputSearch({ SearchReducer }) {
     e.preventDefault()
     console.log(city)
     dispatch(updateSearch(city))
-    navigate("/properties")
+    navigate(`/properties?city=${city}`)
     
   }
   

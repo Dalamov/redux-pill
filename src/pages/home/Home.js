@@ -1,13 +1,12 @@
 
 import React from "react";
-import InputSearch from "../../components/InputSearch/inputSearch";
+import InputSearch from "../../components/InputSearch/InputSearch";
 import Carrousel from "../../components/Carrousel/carrousel";
 
-const Home = ({ searchMapped }) => {
+const Home = () => {
 
   return (
     <>
-      {/* {searchMapped} */}
       <div>
         <Carrousel />
         <InputSearch />
@@ -15,14 +14,6 @@ const Home = ({ searchMapped }) => {
     </>
   );
 };
-
-// const mapStateToProps = (state) => {
-//   return {
-//     searchMapped: state.search,
-//   };
-// };
-
-// const reduxHoc = connect(mapStateToProps);
 
 export default Home;
 
