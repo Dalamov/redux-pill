@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Home from "./pages/home/Home";
-import Header from "./components/header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/header/Header";
+import Home from "./pages/home/Home";
+import Dashboard from "./pages/Dashboard";
+import Register from "./pages/Register";
+import LogIn from "./pages/LogIn";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import Dashboard from "./pages/Dashboard";
 
 library.add(fas);
 
@@ -19,6 +21,8 @@ class App extends Component {
           <Route path="/" element={<Home />} />
           <Route exact path="/properties" element={<Dashboard />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/logIn" element={< LogIn />} />
         </Routes>
       </BrowserRouter>
     );

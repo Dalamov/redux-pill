@@ -52,9 +52,9 @@ const Filters = ({ FilterReducer }) => {
   return (
     <div className="container my-sm-5 border p-0 bg-sec-light">
       <div id="content">
-        <InputSearch 
+        {/* <InputSearch 
         
-        />
+        /> */}
         <div className="d-sm-flex flex-column ">
           <div className=" text-color m-1 d-flex shadow-sm p-1 bg-white rounded  h6">
             <b>Filter by :</b>
