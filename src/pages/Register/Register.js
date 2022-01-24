@@ -14,7 +14,7 @@ const Register = () => {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const values = {
@@ -24,8 +24,10 @@ const Register = () => {
       passwordConfirm: passwordConfirmRef.current.value,
     };
     
-    const response = registerUser(values)
-    return response;
+    await registerUser(values)
+      .then((response)=>{
+        console.log(response.data.data.token)
+      })
   }
   // 	schema
   // 		.validate(values, { abortEarly: false })

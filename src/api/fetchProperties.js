@@ -25,7 +25,6 @@ export async function registerUser(values) {
   }
   );
 
-  
   return response;
 }
 
