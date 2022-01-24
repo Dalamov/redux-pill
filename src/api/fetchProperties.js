@@ -16,6 +16,20 @@ export async function getProperties(token) {
   return response.data;
 }
 
+export async function registerUser(values) {
+  // baseURL: process.env.REACT_APP_SERVER_BASE_URL,
+  const response = await axios({
+    url: `http://localhost:8100/api/register?email=${values.email}&name=${values.firstName}&password=${values.password}&confirm_password=${values.passwordConfirm}`,
+    method: "POST",
+    
+  }
+  );
+
+  
+  return response;
+}
+
+
 // export const getProperty = (propertyId, api = makeApi()) => {
 //   return api.get(`/${propertyId}`);
 // };

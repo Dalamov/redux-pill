@@ -32,7 +32,7 @@ const InputSearch = ({ SearchReducer }) => {
       <div className="container row">
         <div className="row">
           <div className="col-lg-12">
-            <form onSubmit={(e) => searchSubmitHandler(e)}>
+            <form onSubmit={searchSubmitHandler}>
               <div className="row justify-content-end align-items-center">
                 <div className="col-lg-3 col-md-3 col-sm-12 p-0">
                   <input

@@ -8,10 +8,9 @@ import InputGroup from "react-bootstrap/InputGroup";
 // import { default as schema } from "./schema.js";
 
 const LogIn = () => {
-  const firstnameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
+
 
   function handleSubmit(event) {
     event.preventDefault();

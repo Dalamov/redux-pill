@@ -6,23 +6,26 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup";
 import { default as schema } from "./schema.js";
+import { registerUser } from "../../api/fetchProperties.js";
 
 const Register = () => {
-  const firstnameRef = useRef();
+  const firstNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
     const values = {
-      firstname: firstnameRef.current.value,
+      firstName: firstNameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
       passwordConfirm: passwordConfirmRef.current.value,
     };
-    return values;
+    
+    const response = registerUser(values)
+    return response;
   }
   // 	schema
   // 		.validate(values, { abortEarly: false })
@@ -49,16 +52,16 @@ const Register = () => {
             {/* {authError && (
             <Alert variant="danger text-center">{authError.message}</Alert>
           )} */}
-            <Form className="p-2" onSubmit={handleSubmit}>
+            <Form className="p-2" onSubmit={(e) => handleSubmit(e)}>
               <div className="d-flex gap-2">
                 <Form.Group className="w-50 mb-3">
-                  <Form.Label htmlFor="input_firstname">First name</Form.Label>
+                  <Form.Label htmlFor="input_firstName">First name</Form.Label>
                   <InputGroup hasValidation>
                     <Form.Control
-                      id="input_firstname"
+                      id="input_firstName"
                       type="text"
                       placeholder="John"
-                      ref={firstnameRef}
+                      ref={firstNameRef}
                       // isInvalid={Boolean(errors?.firstname)}
                     />
                     <Form.Control.Feedback type="invalid">
