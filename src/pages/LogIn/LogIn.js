@@ -5,23 +5,32 @@ import Button from "react-bootstrap/Button";
 // import Alert from "react-bootstrap/Alert";
 import { Link } from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup";
+import { loginUser } from "../../api/fetchProperties.js";
+import { connect, useDispatch } from "react-redux";
+import { setToken } from "../../redux/auth/actions"
+
 // import { default as schema } from "./schema.js";
 
-const LogIn = () => {
+const LogIn = ({ UserReducer }) => {
+  const dispatch = useDispatch();
   const emailRef = useRef();
   const passwordRef = useRef();
-
-
-  function handleSubmit(event) {
-    event.preventDefault();
+  
+  async function handleSubmit(e) {
+    e.preventDefault();
 
     const values = {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
-
-    return values;
+    
+    await loginUser(values)
+      .then((response)=>{
+        const currentToken = response.data.data.token
+        dispatch(setToken(currentToken))
+      })
   }
+  
   return (
     <>
       <div className="d-flex justify-content-center m-3">
@@ -31,7 +40,7 @@ const LogIn = () => {
             {/* {authError && (
             <Alert variant="danger text-center">{authError.message}</Alert>
           )} */}
-            <Form className="p-2" onSubmit={handleSubmit}>
+            <Form className="p-2" onSubmit={(e) => handleSubmit(e)}>
               <div className="d-flex gap-2"></div>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="input_email">Email address</Form.Label>
@@ -86,4 +95,9 @@ const LogIn = () => {
     </>
   );
 };
-export default LogIn;
+
+
+const mapStateToProps = (state) => {
+  return { UserReducer: state.UserReducer };
+};
+export default connect(mapStateToProps)(LogIn);

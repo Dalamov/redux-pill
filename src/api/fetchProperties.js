@@ -28,6 +28,18 @@ export async function registerUser(values) {
   return response;
 }
 
+export async function loginUser(values) {
+  // baseURL: process.env.REACT_APP_SERVER_BASE_URL,
+  const response = await axios({
+    url: `http://localhost:8100/api/login?email=${values.email}&password=${values.password}`,
+    method: "POST",
+  }
+  );
+
+  return response;
+}
+
+
 
 // export const getProperty = (propertyId, api = makeApi()) => {
 //   return api.get(`/${propertyId}`);
