@@ -2,13 +2,13 @@ import axios from "axios";
 const abortController = new AbortController();
 const signal = abortController.signal;
 
-export async function getProperties() {
+export async function getProperties(token) {
   // baseURL: process.env.REACT_APP_SERVER_BASE_URL,
   const response = await axios({
     url: `http://localhost:8100/api/properties`,
     method: "GET",
     headers: {
-      Authorization: `Bearer 0b1d6008634d9d57e67324d0dff3fb5c7d9da22a96c01ea7278051ab4cfcdb6c`,
+      Authorization: `Bearer ${token}`,
     },
     signal,
   });

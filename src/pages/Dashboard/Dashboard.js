@@ -4,7 +4,7 @@ import "./dashboard.css";
 import { getProperties } from "../../api/fetchProperties";
 
 const Dashboard = () => {
-  const properties =  getProperties();
+  const properties =  getProperties(token);
   return (
     <>
       <Filters />
