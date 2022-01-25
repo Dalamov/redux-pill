@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Filters from "../../components/Filters";
 import "./dashboard.css";
 import { getProperties } from "../../api/fetchProperties";
 
 const Dashboard = () => {
-  const properties =  getProperties(token);
+  let result;
+
+  async function propertiesList() {
+    result = await getProperties();
+    console.log(result);
+  }
+  propertiesList();
+
+  // useEffect(() => {
+  //   (async () => {
+  //     result = await getProperties();
+
+  //   })()
+
   return (
     <>
       <Filters />
-      {properties.map((property) => {
+      {result.map((property) => {
         return (
           <div className="row">
             <div className="col-lg-8 mx-auto">

@@ -1,17 +1,17 @@
 import userState from "./state";
 
 const UserReducer = (state = userState, action) => {
-    switch (action.type) {
-      case "SET_TOKEN":
+  switch (action.type) {
+    case "SET_TOKEN":
+      localStorage.setItem("token", action.payload);
+      return {
+        ...state,
+        token: action.payload,
+      };
 
-        return {
-          ...state,
-          token: action.payload,
-        };
-  
-      default:
-        return state;
-    }
-  };
+    default:
+      return state;
+  }
+};
 
-  export default UserReducer
+export default UserReducer;

@@ -1,9 +1,9 @@
 import axios from "axios";
 const abortController = new AbortController();
 const signal = abortController.signal;
+const token = localStorage.getItem("token");
 
-export async function getProperties(token) {
-  // baseURL: process.env.REACT_APP_SERVER_BASE_URL,
+export async function getProperties() {
   const response = await axios({
     url: `http://localhost:8100/api/properties`,
     method: "GET",
@@ -13,7 +13,7 @@ export async function getProperties(token) {
     signal,
   });
 
-  return response.data;
+  return response.data.data;
 }
 
 export async function registerUser(values) {
